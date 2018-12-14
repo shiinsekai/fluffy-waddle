@@ -52,7 +52,7 @@ class ShiinsekaiPlayer extends Player
 
         for ($i = 1; $i < count($opponentChoices); ++$i) {
                     if ($opponentChoices[$i] == 'foe') {
-                        isHappyNiceGuy = false;
+                        $isHappyNiceGuy = false;
                     }
                 }
 
