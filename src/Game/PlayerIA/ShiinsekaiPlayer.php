@@ -78,10 +78,6 @@ class ShiinsekaiPlayer extends Player
             return parent::friendChoice();
         }
 
-        if ($isHappyNiceGuy == true && $this->result->getNbRound() >= $threshold) {
-            return parent::friendChoice();
-        }
-
         if ($niceGuy == true) {
             return parent::friendChoice();
         }
