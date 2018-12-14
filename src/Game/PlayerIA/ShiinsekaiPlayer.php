@@ -40,9 +40,24 @@ class ShiinsekaiPlayer extends Player
         // -------------------------------------    -----------------------------------------------------
         // How can i display the result of each round ? $this->prettyDisplay()
         // -------------------------------------    -----------------------------------------------------
+        $opponentChoices = $this->result->getChoicesFor($this->opponentSide);
+        $isBastard = true;
+
+        for ($i = 1; $i < count($opponentChoices); ++$i) {
+            if ($opponentChoices[$i] == 'friend') {
+                $isBastard = false;
+            }
+        }
+
+
         if ($this->result->getNbRound() == 1) {
             return parent::foeChoice();
         }
+
+        if ($isBastard == true) {
+            return parent::foeChoice();
+        }
+
         if ($this->result->getLastScoreFor($this->opponentSide) == 'friend') {
             return parent::foeChoice();
         }
