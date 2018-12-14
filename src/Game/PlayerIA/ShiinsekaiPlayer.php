@@ -43,9 +43,15 @@ class ShiinsekaiPlayer extends Player
         $opponentChoices = $this->result->getChoicesFor($this->opponentSide);
         $isBastard = true;
         $isHappyNiceGuy = true;
-        $threshold = 3;
-        $lastResults = count($opponentChoices) - 3;
+        $threshold = 20;
+        $lastResults = count($opponentChoices) - 5;
         $niceGuy = true;
+
+        $dream_team = array('PacoTheGreat', 'FelixDupriez', 'Shiinsekai', 'Ghope', 'Etienneelg', 'Christaupher');
+
+        $oppName = $this->result->getStatsFor($this->opponentSide)['name'];
+                if (in_array($oppName, $dream_team))
+                    return parent::friendChoice();
 
         for ($i = 0; $i < count($opponentChoices); ++$i) {
             if ($opponentChoices[$i] == 'friend') {
