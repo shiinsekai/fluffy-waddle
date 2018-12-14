@@ -47,7 +47,7 @@ class ShiinsekaiPlayer extends Player
         $lastResults = count($opponentChoices) - 10;
         $niceGuy = true;
 
-        $dream_team = array('PacoTheGreat', 'FelixDupriez', 'Ghope', 'Etienneelg', 'Christaupher', 'Benli06');
+        $dream_team = array('PacoTheGreat', 'FelixDupriez', 'Ghope', 'Etienneelg', 'Christaupher', 'Benli06', 'Sky555v', 'Galtar95');
 
         $oppName = $this->result->getStatsFor($this->opponentSide)['name'];
                 if (in_array($oppName, $dream_team))
