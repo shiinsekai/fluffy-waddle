@@ -43,7 +43,7 @@ class ShiinsekaiPlayer extends Player
         $opponentChoices = $this->result->getChoicesFor($this->opponentSide);
         $isBastard = true;
         $isHappyNiceGuy = true;
-        $threshold = 5;
+        $threshold = 3;
         $lastResults = count($opponentChoices) - 3;
         $niceGuy = true;
 
