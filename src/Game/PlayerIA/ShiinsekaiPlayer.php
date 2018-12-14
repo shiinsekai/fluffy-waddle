@@ -60,7 +60,7 @@ class ShiinsekaiPlayer extends Player
             }
         }
 
-        if ($this->result->getNbRound() == 1) {
+        if ($this->result->getNbRound() == 0) {
             return parent::foeChoice();
         }
 
