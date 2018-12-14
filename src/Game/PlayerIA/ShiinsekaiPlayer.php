@@ -43,6 +43,7 @@ class ShiinsekaiPlayer extends Player
         $opponentChoices = $this->result->getChoicesFor($this->opponentSide);
         $isBastard = true;
         $isHappyNiceGuy = true;
+        $threshold = 5;
 
         for ($i = 1; $i < count($opponentChoices); ++$i) {
             if ($opponentChoices[$i] == 'friend') {
@@ -60,11 +61,11 @@ class ShiinsekaiPlayer extends Player
             return parent::foeChoice();
         }
 
-        if ($isBastard == true) {
+        if ($isBastard == true && $this->result->getNbRound() >= $threshold) {
             return parent::foeChoice();
         }
 
-        if ($isHappyNiceGuy == true) {
+        if ($isHappyNiceGuy == true && $this->result->getNbRound() >= $threshold) {
             return parent::friendChoice();
         }
 
