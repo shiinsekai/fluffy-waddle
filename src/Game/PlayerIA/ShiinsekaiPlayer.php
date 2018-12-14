@@ -71,7 +71,7 @@ class ShiinsekaiPlayer extends Player
         if ($this->result->getLastScoreFor($this->opponentSide) == 'friend') {
             return parent::foeChoice();
         }
-        return parent::foeChoice();
+        return parent::friendChoice();
     }
  
 };
