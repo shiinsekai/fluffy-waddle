@@ -42,6 +42,7 @@ class ShiinsekaiPlayer extends Player
         // -------------------------------------    -----------------------------------------------------
         $opponentChoices = $this->result->getChoicesFor($this->opponentSide);
         $isBastard = true;
+        $isHappyNiceGuy = true;
 
         for ($i = 1; $i < count($opponentChoices); ++$i) {
             if ($opponentChoices[$i] == 'friend') {
@@ -49,6 +50,11 @@ class ShiinsekaiPlayer extends Player
             }
         }
 
+        for ($i = 1; $i < count($opponentChoices); ++$i) {
+                    if ($opponentChoices[$i] == 'foe') {
+                        isHappyNiceGuy = false;
+                    }
+                }
 
         if ($this->result->getNbRound() == 1) {
             return parent::foeChoice();
@@ -56,6 +62,10 @@ class ShiinsekaiPlayer extends Player
 
         if ($isBastard == true) {
             return parent::foeChoice();
+        }
+
+        if ($isHappyNiceGuy == true) {
+            return parent::friendChoice();
         }
 
         if ($this->result->getLastScoreFor($this->opponentSide) == 'friend') {
